@@ -21,7 +21,7 @@ class Banking extends React.Component {
                 <input type="password" placeholder="Password" className="form-control" />
               </div>
             </div>
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-success btn-sm">Login</button>
           </form>
 
           <div className="new-register">

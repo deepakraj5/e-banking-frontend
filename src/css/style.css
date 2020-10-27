@@ -1,5 +1,5 @@
 body {
-    background-color: azure;
+    background-color: whitesmoke;
     /* background-color: black; */
     /* background-image: url('../images/18304.jpg'); */
     /* background-repeat: no-repeat; */
@@ -10,6 +10,10 @@ body {
     /* position: relative; */
 }
 
+.account-personal {
+    padding: 5rem;
+}
+
 .home .home-bg {
     /* background-image: url('../images/26368.jpg'); */
     font-weight: bolder;
@@ -18,6 +22,10 @@ body {
 
 .details-bar .jumbotron {
     
+    background-color: azure;
+}
+
+.newaccount .jumbotron {
     background-color: azure;
 }
 

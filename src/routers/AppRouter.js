@@ -9,9 +9,7 @@ import Careers from '../components/Careers'
 import ContactUS from '../components/ContactUS'
 import Loan from '../components/Loan'
 import Products from '../components/Products'
-import NewRegisterForm from '../components/NewRegisterForm'
-import ImageUpload from '../components/ImageUpload'
-import ShowProfile from '../components/ShowProfile'
+import NewAccount from '../components/NewAccount'
 // import Footer from '../components/Footer'
 
 class AppRouter extends React.Component{
@@ -29,9 +27,7 @@ class AppRouter extends React.Component{
                         <Route path="/products" component={Products} />
                         <Route path="/service1" component={Service1} />
                         <Route path="/service2" component={Service2} />
-                        <Route path="/new" component={NewRegisterForm} />
-                        <Route path="/profile" component={ShowProfile} />
-                        <Route path="/image" component={ImageUpload} />
+                        <Route path="/new" component={NewAccount} />
                     </Switch>
                     {/* <Footer /> */}
                 </BrowserRouter>
