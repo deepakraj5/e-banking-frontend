@@ -11,17 +11,17 @@ class Banking extends React.Component {
           <form>
             <div className="form-row">
               <div className="col-md-4 mb3">
-                <label>User Name</label>
-                <input type="text" placeholder="User Name" className="form-control" />
+                <label>Email</label>
+                <input type="email" placeholder="Email" className="form-control form-control-sm" />
               </div>
             </div>
             <div className="form-row">
               <div className="col-md-4 mb-3">
                 <label>Password</label>
-                <input type="password" placeholder="Password" className="form-control" />
+                <input type="password" placeholder="Password" className="form-control form-control-sm" />
               </div>
             </div>
-            <button className="btn btn-success btn-sm">Login</button>
+	    {this.props.title === 'Retail Banking' ? <button className="btn btn-success btn-sm">Login</button> : <button className="btn btn-success 							btn-sm" disabled>Login</button>}
           </form>
 
           <div className="new-register">
@@ -29,13 +29,7 @@ class Banking extends React.Component {
           </div>
 
           <p className="text-muted">
-            embarrassing hidden in the middle of text. All the Lorem Ipsum
-            generators on the Internet tend to repeat predefined chunks as
-            necessary, making this the first true generator on the Internet. It
-            uses a dictionary of over 200 Latin words, combined with a handful
-            of model sentence structures, to generate Lorem Ipsum which looks
-            reasonable. The generated Lorem Ipsum is therefore always free from
-            repetition, injected humour, or non-characteristic words etc.
+            Most traditional banks offer e-banking services as an additional method of providing service. Further, many new banks deliver banking services primarily through the internet or other electronic delivery channels. Also, some banks are ‘internet only’ banks without any physical branch anywhere in the country.In India, since 1997, when the ICICI Bank first offered internet banking services, today, most new-generation banks offer the same to their customers. In fact, all major banks provide e-banking services to their customers.
           </p>
         </div>
       </div>
