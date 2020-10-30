@@ -2,11 +2,20 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Banking from "./Banking";
 import InfoAboutLogin from "./InfoAboutLogin";
+import Dashboard from './Dashboard'
+import authCheckService from '../services/authCheckService'
 
 class Home extends React.Component {
   state = {
     option: 1,
+    dashboard: authCheckService() 
   };
+
+  handleDashboard = () => {
+    this.setState(() => ({
+      dashboard: authCheckService()
+    }))
+  }
 
   handleInfoAboutLogin = () => {
     this.setState(() => ({
@@ -56,23 +65,27 @@ class Home extends React.Component {
           <p className="text-center">Welcome to City Bank</p>
         </div>
 
-        <div className="container d-flex bd-highlight mb-3 shadow bg-white rounded">
-          <Sidebar
-            handleRetailBanking={this.handleRetailBanking}
-            handleCoparateBanking={this.handleCoparateBanking}
-            handleMobileBanking={this.handleMobileBanking}
-            handleInfoAboutLogin={this.handleInfoAboutLogin}
-          />
-          {this.state.option === 1 ? (
-            <InfoAboutLogin />
-          ) : this.state.option === 2 ? (
-            <Banking title={'Retail Banking'} />
-          ) : this.state.option === 3 ? (
-            <Banking title={'Coparate Banking'} />
-          ) : (
-            <Banking title={'Mobile Banking'} />
-          )}
-        </div>
+        {this.state.dashboard ? <Dashboard handleDashboard={this.handleDashboard} /> : 
+
+          <div className="container d-flex bd-highlight mb-3 shadow bg-white rounded">
+            <Sidebar
+              handleRetailBanking={this.handleRetailBanking}
+              handleCoparateBanking={this.handleCoparateBanking}
+              handleMobileBanking={this.handleMobileBanking}
+              handleInfoAboutLogin={this.handleInfoAboutLogin}
+            />
+            {this.state.option === 1 ? (
+              <InfoAboutLogin />
+            ) : this.state.option === 2 ? (
+              <Banking title={'Retail Banking'} handleDashboard={this.handleDashboard} />
+            ) : this.state.option === 3 ? (
+              <Banking title={'Coparate Banking'} />
+            ) : (
+              <Banking title={'Mobile Banking'} />
+            )}
+          </div>
+
+          }
       </div>
     );
   }

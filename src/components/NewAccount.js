@@ -33,6 +33,10 @@ const NewAccount = (props) => {
     password,
   };
 
+  const handleCancel = () => {
+    props.history.push('/')
+  }
+
   const handleNewAccount = () => {
 
     ClientService.newAccount(client).then((res) => {
@@ -44,18 +48,6 @@ const NewAccount = (props) => {
     })
 
   }
-
-
-    // ClientService.newAccount(client).then((res) => {
-    //   if(res.status === 201)
-    //     props.history.push('/')
-    // }).catch((error) => {
-    //   console.log(error.response.data)
-    //   helperTexts = error.response.data
-    //   console.log(helperTexts)
-    // })
-
-    // console.log(helperTexts)
 
   const handleName = (e) => {
     setName(e.target.value);
@@ -243,7 +235,7 @@ const NewAccount = (props) => {
         </div>
 
         <div>
-          <Button variant="contained" size="small" color="secondary">
+          <Button onClick={handleCancel} variant="contained" size="small" color="secondary">
             Cancel
           </Button>
           <Button

@@ -7,6 +7,10 @@ class ClientService {
     newAccount(client) {
         return axios.post(baseUrl + '/signup', client)
     }
+
+    loginAccount(credentials) {
+        return axios.post(baseUrl + '/login', credentials)
+    }
 }
 
 export default new ClientService()
