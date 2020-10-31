@@ -2,21 +2,27 @@ import React, { useState, useEffect } from "react";
 import Cookies from 'universal-cookie'
 import { Button } from '@material-ui/core'
 import avatar from '../images/avatar.png'
+import AccountDetails from './AccountDetails'
+import ClientService from '../services/ClientService'
 
 const Dashboard = (props) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [accNo, setAccNo] = useState('')
+    const [dob, setDOB] = useState('')
     const [gender, setGender] = useState('')
 
     useEffect(() => {
-        const clientDetails = JSON.parse(localStorage.getItem('clientDetails'))
-        console.log(clientDetails)
-        setName(clientDetails.name)
-        setEmail(clientDetails.email)
-        setAccNo(clientDetails.accountnumber)
-        setGender(clientDetails.gender.toUpperCase())
+        // const clientDetails = JSON.parse(localStorage.getItem('clientDetails'))
+
+        ClientService.profileDetails().then((res) => {
+          setName(res.data.name)
+          setEmail(res.data.email)
+          setDOB(res.data.dateofbirth.slice(0, 10))
+          setGender(res.data.gender.toUpperCase())
+        }).catch((error) => {
+          console.log(error)
+        })
     })
 
     const handleLogout = (e) => {
@@ -56,8 +62,8 @@ const Dashboard = (props) => {
                     </tr>
 
                     <tr>
-                        <td className="uhead">Acc Number</td>
-                        <td className="udetails">{accNo}</td>
+                        <td className="uhead">Date of Birth</td>
+                        <td className="udetails">{dob}</td>
                     </tr>
 
                     <tr>
@@ -77,6 +83,7 @@ const Dashboard = (props) => {
               Account Details
               <Button variant='contained' color='secondary' size='small' onClick={handleLogout}>Logout</Button>
             </h4>
+            <AccountDetails />
           </div>
         </div>
       </div>

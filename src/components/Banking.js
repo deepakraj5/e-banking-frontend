@@ -8,6 +8,7 @@ const Banking = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorList, setErrorList] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const credentials = {
     email,
@@ -17,16 +18,19 @@ const Banking = (props) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     ClientService.loginAccount(credentials)
       .then((res) => {
-        let clientDetails = JSON.stringify(res.data.user)
-        localStorage.setItem('clientDetails', clientDetails)
-        const cookie = new Cookies()
-        cookie.set('jwt', res.data.token, { path: '/' })
-        props.handleDashboard()
+        // let clientDetails = JSON.stringify(res.data.user);
+        // localStorage.setItem("clientDetails", clientDetails);
+        const cookie = new Cookies();
+        cookie.set("jwt", res.data.token, { path: "/", maxAge: 480 });
+        props.handleDashboard();
       })
       .catch((error) => {
         setErrorList(error.response.data);
+        setLoading(false)
       });
   };
 
@@ -43,7 +47,7 @@ const Banking = (props) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                helperText={errorList ? errorList.error : ''}
+                helperText={errorList ? errorList.error : ""}
               />
             </div>
           </div>
@@ -54,11 +58,11 @@ const Banking = (props) => {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                helperText={errorList ? errorList.error : ''}
+                helperText={errorList ? errorList.error : ""}
               />
             </div>
           </div>
-          {props.title === "Retail Banking" ? (
+          {props.title === "Retail Banking" && !loading ? (
             <Button
               variant="contained"
               color="primary"
@@ -67,6 +71,15 @@ const Banking = (props) => {
             >
               Login
             </Button>
+          ) : props.title === "Retail Banking" && loading ? (
+            <button className="btn btn-primary btn-sm" disabled>
+              <span
+                className="spinner-grow spinner-grow-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Loging in...
+            </button>
           ) : (
             <Button variant="contained" color="primary" size="small" disabled>
               Login

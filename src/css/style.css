@@ -10,6 +10,15 @@ body {
     /* position: relative; */
 }
 
+.balance {
+    padding: 40px;
+}
+
+.balance p {
+    font-size: large;
+    font-weight: bold;
+}
+
 .uhead {
     text-align: left;
     color: gray;
@@ -20,12 +29,21 @@ body {
     color: navy;
 }
 
-.accdetails .card:hover {
+/* .accdetails .card:hover {
     box-shadow: 3px 3px 3px 3px grey;
+} */
+
+.acc-details {
+    padding: 20px;
+}
+
+.transfer {
+    text-align: right;
 }
 
 .accdetails .card {
     height: 25rem;
+    box-shadow: 3px 3px 3px 3px grey;
 }
 
 .logout {

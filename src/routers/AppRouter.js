@@ -10,6 +10,8 @@ import ContactUS from '../components/ContactUS'
 import Loan from '../components/Loan'
 import Products from '../components/Products'
 import NewAccount from '../components/NewAccount'
+import FundTransfer from '../components/FundTransfer'
+import ViewTransaction from '../components/ViewTransaction'
 // import Footer from '../components/Footer'
 
 class AppRouter extends React.Component{
@@ -28,6 +30,8 @@ class AppRouter extends React.Component{
                         <Route path="/service1" component={Service1} />
                         <Route path="/service2" component={Service2} />
                         <Route path="/new" component={NewAccount} />
+                        <Route path='/transfer' component={FundTransfer} />
+                        <Route path='/viewtransaction' component={ViewTransaction} />
                     </Switch>
                     {/* <Footer /> */}
                 </BrowserRouter>
