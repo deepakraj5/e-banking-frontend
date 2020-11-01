@@ -11,6 +11,7 @@ const Dashboard = (props) => {
     const [email, setEmail] = useState('')
     const [dob, setDOB] = useState('')
     const [gender, setGender] = useState('')
+    const [accountNumber, setAccountNumber] = useState('')
 
     useEffect(() => {
         // const clientDetails = JSON.parse(localStorage.getItem('clientDetails'))
@@ -20,6 +21,7 @@ const Dashboard = (props) => {
           setEmail(res.data.email)
           setDOB(res.data.dateofbirth.slice(0, 10))
           setGender(res.data.gender.toUpperCase())
+	  setAccountNumber(res.data.accountNumber)
         }).catch((error) => {
           console.log(error)
         })
@@ -55,6 +57,11 @@ const Dashboard = (props) => {
                         <td className="uhead">Name</td>
                         <td className="udetails">{name}</td>
                     </tr>
+			
+		    <tr>
+                        <td className="uhead">Account Number</td>
+                        <td className="udetails">{accountNumber}</td>
+                    </tr>
 
                     <tr>
                         <td className="uhead">Email</td>
@@ -70,6 +77,7 @@ const Dashboard = (props) => {
                         <td className="uhead">Gender</td>
                         <td className="udetails">{gender}</td>
                     </tr>
+
                   </thead>
               </table>
             </div>
