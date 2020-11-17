@@ -18,6 +18,9 @@ const FundTransFer = (props) => {
   }
 
   useEffect(() => {
+
+    document.title = 'Fund Transfer'
+
     if (!authCheckService()) {
       props.history.push("/");
     }

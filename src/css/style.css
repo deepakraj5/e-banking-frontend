@@ -1,11 +1,12 @@
 body {
-    background-color: whitesmoke;
+    background-image: url('../images/poster2.jpeg');
+    /* background-color: whitesmoke; */
     /* background-color: black; */
     /* background-image: url('../images/18304.jpg'); */
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    /* background-position: center center; */
-    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
     /* height: 635px; */
     /* position: relative; */
 }

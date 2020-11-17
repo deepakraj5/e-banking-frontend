@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TextField, Button } from "@material-ui/core";
 import Validator from "validator";
 import ClientService from "../services/ClientService";
 
 const NewAccount = (props) => {
+
+  useEffect(() => {
+    document.title = 'New Account'
+  })
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [accNo, setAccNo] = useState("");

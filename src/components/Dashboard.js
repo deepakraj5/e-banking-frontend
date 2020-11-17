@@ -21,7 +21,7 @@ const Dashboard = (props) => {
           setEmail(res.data.email)
           setDOB(res.data.dateofbirth.slice(0, 10))
           setGender(res.data.gender.toUpperCase())
-	  setAccountNumber(res.data.accountnumber)
+	        setAccountNumber(res.data.accountnumber)
         }).catch((error) => {
           console.log(error)
         })

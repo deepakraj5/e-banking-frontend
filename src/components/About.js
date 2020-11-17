@@ -1,12 +1,17 @@
 import React from "react";
 
 class About extends React.Component {
+
+  componentDidMount() {
+    document.title = 'About'
+  }
+
   render() {
     return (
       <div>
-        <div className="container jumbotron shadow bg-white rounded">
+        {/* <div className="container jumbotron shadow bg-white rounded">
           <h2>About</h2>
-        </div>
+        </div> */}
 
         <div className="container jumbotron shadow bg-white rounded">
           <p>

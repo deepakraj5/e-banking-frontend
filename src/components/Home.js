@@ -42,6 +42,7 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
+    document.title = 'E - Banking'
     try {
       const json = localStorage.getItem("option");
       const option = JSON.parse(json);
@@ -61,9 +62,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home">
-        <div className="container jumbotron shadow bg-white rounded home-bg">
+        {/* <div className="container jumbotron shadow bg-white rounded home-bg">
           <p className="text-center">Welcome to City Bank</p>
-        </div>
+        </div> */}
 
         {this.state.dashboard ? <Dashboard handleDashboard={this.handleDashboard} /> : 
 

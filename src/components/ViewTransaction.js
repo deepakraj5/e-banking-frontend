@@ -10,6 +10,9 @@ class ViewTransaction extends React.Component {
     }
 
     componentDidMount() {
+
+        document.title = 'Transaction'
+
         if(!authCheckService()) {
             this.props.history.push('/')
         }
