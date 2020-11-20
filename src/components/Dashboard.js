@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from "react";
 import Cookies from 'universal-cookie'
-import { Button } from '@material-ui/core'
+import { Button, Backdrop, CircularProgress } from '@material-ui/core'
+import { makeStyles } from '@material-ui/styles'
 import avatar from '../images/avatar.png'
 import AccountDetails from './AccountDetails'
 import ClientService from '../services/ClientService'
 
+const useStyles = makeStyles((theme) => ({
+  loader: {
+    backgroundColor: "white",
+    color: "blue"
+  }
+}));
+
 const Dashboard = (props) => {
+
+  const classes = useStyles()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [dob, setDOB] = useState('')
     const [gender, setGender] = useState('')
     const [accountNumber, setAccountNumber] = useState('')
+
+    const [open, setOpen] = useState(true)
 
     useEffect(() => {
         // const clientDetails = JSON.parse(localStorage.getItem('clientDetails'))
@@ -21,7 +33,8 @@ const Dashboard = (props) => {
           setEmail(res.data.email)
           setDOB(res.data.dateofbirth.slice(0, 10))
           setGender(res.data.gender.toUpperCase())
-	        setAccountNumber(res.data.accountnumber)
+          setAccountNumber(res.data.accountnumber)
+          setOpen(false)
         }).catch((error) => {
           console.log(error)
         })
@@ -48,7 +61,7 @@ const Dashboard = (props) => {
 
       <div className="row">
         <div className="col-lg-4 user-details">
-          <div className="card shadow rounded">
+          <div className="card shadow rounded bg-transparent">
           <img className="card-img-top" src={avatar} alt="avatar" />
             <div className="card-body">
               <table cellPadding="8">
@@ -85,9 +98,9 @@ const Dashboard = (props) => {
         </div>
 
       <div className="col-lg-8 accdetails">
-        <div className="card">
+        <div className="card shadow bg-transparent">
           <div className="card-body">
-            <h4 className="card-header bg-white logout">
+            <h4 className="card-header bg-transparent logout">
               Account Details
               <Button variant='contained' color='secondary' size='small' onClick={handleLogout}>Logout</Button>
             </h4>
@@ -97,6 +110,10 @@ const Dashboard = (props) => {
       </div>
 
       </div>
+
+      <Backdrop className={classes.loader} open={open}>
+        <CircularProgress color="inherit" />
+      </Backdrop>
 
     </div>
   );

@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/poster2.jpeg');
+    background-image: url('../images/canvabg.png');
     /* background-color: whitesmoke; */
     /* background-color: black; */
     /* background-image: url('../images/18304.jpg'); */
@@ -44,7 +44,7 @@ body {
 
 .accdetails .card {
     height: 25rem;
-    box-shadow: 3px 3px 3px 3px grey;
+    /* box-shadow: 3px 3px 3px 3px grey; */
 }
 
 .logout {
@@ -72,7 +72,7 @@ body {
 
 .details-bar .jumbotron {
     
-    background-color: azure;
+    background-color: transparent;
 }
 
 .newaccount .jumbotron {
@@ -85,7 +85,7 @@ body {
 
 .side-bar .jumbotron {
     
-    background-color: azure;
+    background-color: transparent;
 }
 
 .side-bar .btn-font {

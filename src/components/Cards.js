@@ -1,7 +1,7 @@
 import React from "react";
 
 const Cards = (props) => (
-  <div className="card shadow bg-white rounded" style={{ maxWidth: "20rem" }}>
+  <div className="card shadow bg-transparent rounded" style={{ maxWidth: "20rem" }}>
     <img className="card-img-top" src={props.image} alt='card' width='200rem' height='200rem' />
       <div className="card-body">
         <p className="card-title">{props.title}</p>

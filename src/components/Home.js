@@ -68,7 +68,7 @@ class Home extends React.Component {
 
         {this.state.dashboard ? <Dashboard handleDashboard={this.handleDashboard} /> : 
 
-          <div className="container d-flex bd-highlight mb-3 shadow bg-white rounded">
+          <div className="container d-flex bd-highlight mb-3 shadow bg-transparent rounded">
             <Sidebar
               handleRetailBanking={this.handleRetailBanking}
               handleCoparateBanking={this.handleCoparateBanking}

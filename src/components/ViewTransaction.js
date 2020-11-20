@@ -27,7 +27,7 @@ class ViewTransaction extends React.Component {
 
     render(){
         return(
-            <div className='jumbotron container shadow rounded table-responsive'>
+            <div className='jumbotron container bg-transparent shadow rounded table-responsive'>
                 <h4>Transactions</h4>
 
                 <table className='table'>

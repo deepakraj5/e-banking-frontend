@@ -146,7 +146,7 @@ const NewAccount = (props) => {
   };
 
   return (
-    <div className="container jumbotron shadow bg-white rounded">
+    <div className="container jumbotron shadow bg-transparent rounded">
       <form>
         <div className="form-row">
           <TextField

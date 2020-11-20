@@ -9,11 +9,11 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        {/* <div className="container jumbotron shadow bg-white rounded">
+        {/* <div className="container jumbotron shadow bg-transparent rounded">
           <h2>About</h2>
         </div> */}
 
-        <div className="container jumbotron shadow bg-white rounded">
+        <div className="container jumbotron shadow bg-transparent rounded">
           <p>
             Online banking, also known as internet banking or web banking, is an
             electronic payment system that enables customers of a bank or other
