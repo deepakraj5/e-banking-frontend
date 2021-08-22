@@ -7,7 +7,7 @@ class Header extends React.Component{
         return(
             <div className="container">
                 <Navbar bg="transparent" expand="lg">
-                    <Link to="/" className="navbar-brand font-weight-bold">City Bank</Link>
+                    <Link to="/" className="navbar-brand font-weight-bold">Royal Bank</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">

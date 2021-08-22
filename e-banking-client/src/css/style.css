@@ -1,0 +1,101 @@
+body {
+    background-image: url('../images/canvabg.png');
+    /* background-color: whitesmoke; */
+    /* background-color: black; */
+    /* background-image: url('../images/18304.jpg'); */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    /* height: 635px; */
+    /* position: relative; */
+}
+
+.balance {
+    padding: 40px;
+}
+
+.balance p {
+    font-size: large;
+    font-weight: bold;
+}
+
+.uhead {
+    text-align: left;
+    color: gray;
+}
+
+.udetails {
+    text-align: left;
+    color: navy;
+}
+
+/* .accdetails .card:hover {
+    box-shadow: 3px 3px 3px 3px grey;
+} */
+
+.acc-details {
+    padding: 20px;
+}
+
+.transfer {
+    text-align: right;
+}
+
+.accdetails .card {
+    height: 25rem;
+    /* box-shadow: 3px 3px 3px 3px grey; */
+}
+
+.logout {
+    text-align: right;
+}
+
+.user-details img {
+    height: 6rem;
+    width: 6rem;
+}
+
+.user-details .card {
+    height: 25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.home .home-bg {
+    /* background-image: url('../images/26368.jpg'); */
+    font-weight: bolder;
+    font-size: 2.4rem;
+}
+
+.details-bar .jumbotron {
+    
+    background-color: transparent;
+}
+
+.newaccount .jumbotron {
+    background-color: azure;
+}
+
+.footer-color {
+    background-color: rgb(71, 97, 146);
+}
+
+.side-bar .jumbotron {
+    
+    background-color: transparent;
+}
+
+.side-bar .btn-font {
+    font-size: x-small;
+}
+
+.new-register {
+    font-size: smaller;
+}
+
+.new-register p {
+    color: deeppink;
+}
